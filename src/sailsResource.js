@@ -220,9 +220,13 @@
 				action = action || {};
 				$timeout(function() {
 					item.$resolved = true;
+                    
+                    /*if (data.statusCode > 400) {
+                        deffered.reject(data);
+                    }*/
 
 					if (data && (data.error || data.statusCode > 400)) {
-						$log.error(data);
+						$log.error(data);                        
 						deferred.reject(data.error || data, item, data);
 					} else {
 						data = data.body;
