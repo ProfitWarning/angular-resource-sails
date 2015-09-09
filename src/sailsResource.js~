@@ -222,7 +222,7 @@
 					item.$resolved = true;
                     
                     if (data.statusCode && data.statusCode > 400) {
-                        deferred.reject(data);
+                        deffered.reject(data);
                     }
 
 					if (data && (data.error || data.statusCode > 400)) {
